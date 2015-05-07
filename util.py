@@ -25,6 +25,9 @@ def parse(csvfile):
 	
 
 def time_proc(time_str):
+	"""
+	将时间字符串转化为python datetime对象
+	"""
 	time = {}
 	part = time_str.split()
 	time['h'] = int(part[-1])
@@ -34,6 +37,7 @@ def time_proc(time_str):
 	time['d'] = int(ymd[2])
 	return datetime(time['y'],time['m'],time['d'],time['h'])
 
+# 411之前划分数据集函数
 def split_offline_train_val(totalfile,item_table,train_name,train_label,val_name,val_label):
 	# user_time = {}
 	# def tran(tm):
